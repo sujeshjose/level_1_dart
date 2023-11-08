@@ -38,14 +38,49 @@ void main() {
 
   print('Now enter the result of the calculation:');
   int result = int.parse(stdin.readLineSync() ?? '0');
-  
-  
-  double resultcalc % 10 = Num1 
-  double resultcal = result + 11;
-  double resultcalc = resultcal % 100;
+  // int result = 1902;
 
-  print('Your birthday is: $resultcal ');
+  double finalresult = ((result / 10) + 11) / 100;
+  String finalresultstring = finalresult.toString();
+  int day = int.parse(finalresultstring.split('.')[0]);
+  int month = int.parse(finalresultstring.split('.')[1]);
+  // String month = finalresultstring.split('.')[1];
+  String d = '';
+  if (day == 1 || day == 21 || day == 31)
+    d = '${day}st';
+  else if (day == 2 || day == 22)
+    d = '${day}nd';
+  else
+    d = '${day}th';
+
+  String m = '';
+  if (month == 1)
+    m = 'January';
+  else if (month == 2)
+    m = 'February';
+  else if (month == 3)
+    m = 'March';
+  else if (month == 4)
+    m = 'April';
+  else if (month == 5)
+    m = 'May';
+  else if (month == 6)
+    m = 'June';
+  else if (month == 7)
+    m = 'July';
+  else if (month == 8)
+    m = 'August';
+  else if (month == 9)
+    m = 'September';
+  else if (month == 10)
+    m = 'October';
+  else if (month == 11)
+    m = 'November';
+  else if (month == 12) m = 'December';
+
+  print('Your date of birth is: $d $m');
 }
-
-
+  
+  
+   
 // Path: dateofbirth.dart
